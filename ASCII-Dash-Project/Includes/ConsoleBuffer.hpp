@@ -1,0 +1,5 @@
+class ConsoleBuffer
+{
+public:
+	ConsoleBuffer();
+};
