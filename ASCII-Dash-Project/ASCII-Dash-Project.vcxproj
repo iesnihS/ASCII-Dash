@@ -142,9 +142,12 @@
     <ClCompile Include="ASCII-Dash-Project.cpp" />
     <ClCompile Include="Graphic_Pipeline\ConsoleBuffer.cpp" />
     <ClCompile Include="Manager\ConsoleManager.cpp" />
+    <ClCompile Include="Objects\Object.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Includes\ConsoleBuffer.hpp" />
     <ClInclude Include="Includes\ConsoleManager.hpp" />
+    <ClInclude Include="Includes\Object.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,9 +1,17 @@
 // ASCII-Dash-Project.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
 #include "ConsoleManager.hpp"
+#include "ConsoleBuffer.hpp"
 #include <iostream>
+#include <Object.h>
 int main()
 {
     ConsoleManager console;
+    ConsoleBuffer buffer;
+    Object obj;
+    buffer.DrawChar({23,2},{'H', 0x0044});
+    //buffer.DrawChar({ 0,0 }, { 'H', 0x0022 });
+    //buffer.Blit();
+    Sleep(10000);
     return 0;
 }
 

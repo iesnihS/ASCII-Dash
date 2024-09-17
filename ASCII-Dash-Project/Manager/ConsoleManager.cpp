@@ -16,5 +16,4 @@ void ConsoleManager::FormatConsole()
     SetWindowLongPtr(consoleWindow, n_index, currentStyles);
     SetWindowPos(consoleWindow, 0, 0, 0, 0, 0, SWP_NOZORDER | SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE | SWP_DRAWFRAME);
     ShowWindow(consoleWindow, SW_SHOW);
-    std::cout << "Salut" << std::endl;
 }
