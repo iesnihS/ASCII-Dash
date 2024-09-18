@@ -12,20 +12,29 @@ void ConsoleBuffer::InitBuffer()
 	_bufferCoord = { 0,0 };
 	_bufferSize = { GAME_WIDTH, GAME_HEIGHT };
 	_writingRegion = { 0,0,GAME_WIDTH-1,GAME_HEIGHT-1 };
-	ReadConsoleOutput(_consoleOutput, (CHAR_INFO*)_bufferInfo, _bufferSize,
+	ReadConsoleOutput(_consoleOutput, _bufferInfo, _bufferSize,
 		_bufferCoord, &_writingRegion);
-
-	std::cout << "Le char 0,0 est : " << (_bufferInfo[0][0].Char.AsciiChar == 0) << std::endl;
 }
 
 void ConsoleBuffer::DrawChar(COORD charCoord, CHAR_INFO charInfo)
 {
-	_bufferInfo[charCoord.X][charCoord.Y].Char.AsciiChar = charInfo.Char.AsciiChar;
-	_bufferInfo[charCoord.X][charCoord.Y].Attributes = charInfo.Attributes;
+	if (charInfo.Char.AsciiChar == '\0') 
+		return;
+
+	_bufferInfo[charCoord.X + (charCoord.Y*(GAME_WIDTH- 1))].Char.AsciiChar = charInfo.Char.AsciiChar;
+	_bufferInfo[charCoord.X+ (charCoord.Y * (GAME_WIDTH - 1))].Attributes = charInfo.Attributes;
+}
+
+void ConsoleBuffer::DrawSprite(COORD spriteCoord, Object* object)
+{
+	for(int i = 0;i<object->_sizeSprite.X * object->_sizeSprite.Y; i++)
+	{
+
+	}
 }
 
 void ConsoleBuffer::Blit()
 {
-	WriteConsoleOutput(_consoleOutput, (CHAR_INFO*)_bufferInfo, _bufferSize,
+	WriteConsoleOutput(_consoleOutput, _bufferInfo, _bufferSize,
 		_bufferCoord, &_writingRegion);
 }
