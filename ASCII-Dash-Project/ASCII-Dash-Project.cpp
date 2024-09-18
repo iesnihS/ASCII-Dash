@@ -9,8 +9,8 @@ int main()
     ConsoleBuffer buffer;
     Object obj;
     buffer.DrawChar({23,2},{'H', 0x0044});
-    //buffer.DrawChar({ 0,0 }, { 'H', 0x0022 });
-    //buffer.Blit();
+    buffer.DrawChar({ 0,0 }, { 'H', 0x0022 });
+    buffer.Blit();
     Sleep(10000);
     return 0;
 }
