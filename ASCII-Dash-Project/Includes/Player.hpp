@@ -4,5 +4,9 @@
 
 class Player : public Object
 {
+public:
+	void Jump() const;
+private:
+	COORD position;
 };
 

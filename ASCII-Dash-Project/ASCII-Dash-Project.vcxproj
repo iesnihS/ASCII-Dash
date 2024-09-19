@@ -143,6 +143,7 @@
     <ClCompile Include="CustomTools\CustomTool.cpp" />
     <ClCompile Include="Graphic_Pipeline\ConsoleBuffer.cpp" />
     <ClCompile Include="Manager\ConsoleManager.cpp" />
+    <ClCompile Include="NYTimer.cpp" />
     <ClCompile Include="Objects\Object.cpp" />
     <ClCompile Include="Objects\Spike.cpp" />
   </ItemGroup>
@@ -150,8 +151,22 @@
     <ClInclude Include="Includes\CustomTool.h" />
     <ClInclude Include="Includes\ConsoleBuffer.hpp" />
     <ClInclude Include="Includes\ConsoleManager.hpp" />
+<<<<<<< HEAD
     <ClInclude Include="Includes\Object.h" />
     <ClInclude Include="Includes\Spike.h" />
+=======
+    <ClInclude Include="Includes\Object.hpp" />
+    <ClInclude Include="Includes\InputManager.hpp" />
+    <ClInclude Include="Includes\Player.hpp" />
+    <ClInclude Include="NYTimer.hpp" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ASCII-Dash-Project.rc" />
+>>>>>>> f522dfaf685e4345355315c0c97cdba720d9f12a
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
