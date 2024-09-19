@@ -1,9 +1,10 @@
 #include "InputManager.hpp"
 #include <windows.h>
 #include <exception>
+#include <iostream>
 
 
-InputManager::InputManager()
+InputManager::InputManager(const EventManager &eventManager) : _eventManager(eventManager)
 {
 	_handle = GetStdHandle(STD_INPUT_HANDLE);
 	if (_handle == INVALID_HANDLE_VALUE)
@@ -11,6 +12,13 @@ InputManager::InputManager()
 
 	if (!GetConsoleMode(_handle, &(_oldInputMode)))
 		throw std::exception();
+
+	// Enable the window and mouse input events.
+
+	DWORD fdwMode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT;
+	if (!SetConsoleMode(_handle, fdwMode))
+		throw std::exception();
+
 }
 
 InputManager::~InputManager()
@@ -21,13 +29,17 @@ InputManager::~InputManager()
 void InputManager::PollEvent()
 {
 	DWORD numread = 128;
+	DWORD numEvents = 0;
 
-	if (!ReadConsoleInputW(
+	GetNumberOfConsoleInputEvents(_handle, &numEvents);
+	if (!numEvents)
+		return;
+	if (!ReadConsoleInput(
 		_handle,      // input buffer handle
 		_record,     // buffer to read into
 		128,         // size of read buffer
-		&numread)) // number of records read
-		throw std::exception();
+		&numread)) // number of records read 
+		return;
 
 	// Dispatch the events to the appropriate handler.
 
@@ -43,6 +55,7 @@ void InputManager::PollEvent()
 		case MOUSE_EVENT: // mouse input
 			if (event.Event.MouseEvent.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
 				_eventManager.handleJump();
+
 			break;
 
 		default:

@@ -1,7 +1,7 @@
 #pragma once
 #include <Windows.h>
 #include <vector>
-#include "Object.h"
+#include "Object.hpp"
 #define GAME_WIDTH 50
 #define GAME_HEIGHT 50
 

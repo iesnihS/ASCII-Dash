@@ -4,9 +4,10 @@
 class EventManager
 {
 public:
-	void handleJump();
+	EventManager(const Player& player);
+	void handleJump() const;
 
 private:
-	Player& player;
+	const Player& _player;
 };
 

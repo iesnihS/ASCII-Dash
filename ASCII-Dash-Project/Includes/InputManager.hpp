@@ -5,7 +5,7 @@
 
 class InputManager {
 public:
-	InputManager();
+	InputManager(const EventManager &eventManager);
 	~InputManager();
 
 	void PollEvent();
@@ -13,7 +13,7 @@ public:
 private:
 	HANDLE _handle;
 	DWORD _oldInputMode;
-	PINPUT_RECORD _record;
-	EventManager _eventManager;
+	INPUT_RECORD _record[128];
+	const EventManager& _eventManager;
 };
 
