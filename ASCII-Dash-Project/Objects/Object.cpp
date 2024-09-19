@@ -36,5 +36,5 @@ void Object::Init()
 
 CHAR_INFO** Object::ConvertASCIIArtToSpriteData()
 {
-	
+	return nullptr;
 }
