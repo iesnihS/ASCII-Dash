@@ -12,6 +12,6 @@ int main()
     buffer.DrawSprite({ 0,0 }, &obj);
 
     buffer.Blit();
-    Sleep(10000);
+    Sleep(10000);   
     return 0;
 }
