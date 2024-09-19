@@ -7,10 +7,14 @@ Object::Object()
 
 Object::~Object()
 {
+	for (int i = 0; i < _sizeSprite.Y; i++)
+	{
+		delete _objectSprite[i];
+	}
 	delete _objectSprite;
 }
 
-CHAR_INFO* Object::GetObjectSprite()
+CHAR_INFO** Object::GetObjectSprite()
 {
 	return _objectSprite;
 }
@@ -19,13 +23,18 @@ void Object::Init()
 {
 	_sizeSprite.X = 20;
 	_sizeSprite.Y = 20;
-	_objectSprite = new CHAR_INFO[_sizeSprite.X * _sizeSprite.X];
-	for(int i = 0; i < _sizeSprite.X; i ++)
+	_objectSprite = new CHAR_INFO*[_sizeSprite.Y];
+	for (int i = 0; i < _sizeSprite.Y; i++)
 	{
-		for(int j=0; j< _sizeSprite.Y; j++)
+		_objectSprite[i] = new CHAR_INFO[_sizeSprite.X];
+		for (int j = 0; j < _sizeSprite.X; j++)
 		{
-			_objectSprite[i + (j * (_sizeSprite.X - 1))].Char.AsciiChar = '\0';
+			_objectSprite[i][j].Char.AsciiChar = '\0';
 		}
 	}
-	_objectSprite[0].Char.AsciiChar = 'H';
+}
+
+CHAR_INFO** Object::ConvertASCIIArtToSpriteData()
+{
+	
 }

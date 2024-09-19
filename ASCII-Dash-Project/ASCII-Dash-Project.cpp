@@ -7,8 +7,9 @@ int main()
 {
     ConsoleManager console;
     ConsoleBuffer buffer;
+    Object obj;
 
-
+    buffer.DrawSprite({ 0,0 }, &obj);
 
     buffer.Blit();
     Sleep(10000);
