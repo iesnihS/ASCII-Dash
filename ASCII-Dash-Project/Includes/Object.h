@@ -8,11 +8,11 @@ class Object
 		Object();
 		~Object();
 		CHAR_INFO** GetObjectSprite();
-		COORD _sizeSprite = {};
+		COORD _sizeSprite = {0,0};
 	protected:
 		void Init();
 		CHAR_INFO** _objectSprite = nullptr;
-		std::string _ASCIIArt = "";
-		CHAR_INFO** ConvertASCIIArtToSpriteData();
+		std::string _ASCIIArt = ""; //the ASCII ART need to respect the size of its object
+		void ConvertASCIIArtToSpriteData();
 };
 

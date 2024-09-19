@@ -144,12 +144,14 @@
     <ClCompile Include="Graphic_Pipeline\ConsoleBuffer.cpp" />
     <ClCompile Include="Manager\ConsoleManager.cpp" />
     <ClCompile Include="Objects\Object.cpp" />
+    <ClCompile Include="Objects\Spike.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Includes\CustomTool.h" />
     <ClInclude Include="Includes\ConsoleBuffer.hpp" />
     <ClInclude Include="Includes\ConsoleManager.hpp" />
     <ClInclude Include="Includes\Object.h" />
+    <ClInclude Include="Includes\Spike.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

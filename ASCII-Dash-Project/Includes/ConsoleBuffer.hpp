@@ -11,7 +11,7 @@ public:
 	ConsoleBuffer();
 	void Blit();
 	void DrawChar(COORD, CHAR_INFO);
-	void DrawSprite(COORD, Object*);
+	void DrawSprite(COORD,Object&);
 private:
 	void InitBuffer();
 	HANDLE _consoleOutput;

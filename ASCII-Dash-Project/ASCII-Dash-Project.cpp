@@ -2,15 +2,14 @@
 #include "ConsoleManager.hpp"
 #include "ConsoleBuffer.hpp"
 #include <iostream>
-#include <Object.h>
+#include <Spike.h>
 int main()
 {
     ConsoleManager console;
     ConsoleBuffer buffer;
-    Object obj;
+    Spike obj;
 
-    buffer.DrawSprite({ 0,0 }, &obj);
-
+    buffer.DrawSprite({ 0,0 }, obj);
     buffer.Blit();
     Sleep(10000);   
     return 0;

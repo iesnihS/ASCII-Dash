@@ -20,19 +20,19 @@ void ConsoleBuffer::InitBuffer()
 
 void ConsoleBuffer::DrawChar(COORD charCoord, CHAR_INFO charInfo)
 {
-	if (charInfo.Char.AsciiChar == '\0') {
+	if (charInfo.Char.AsciiChar == '\1') {
 		return;
 	}
 	_bufferInfo[charCoord.X][charCoord.Y].Char.AsciiChar = charInfo.Char.AsciiChar;
 	_bufferInfo[charCoord.X][charCoord.Y].Attributes = charInfo.Attributes;
 }
 
-void ConsoleBuffer::DrawSprite(COORD spriteCoord, Object* object)
+void ConsoleBuffer::DrawSprite(COORD spriteCoord, Object &object)
 {
-	CHAR_INFO** const dataSprite = object->GetObjectSprite();
-	for(int i = 0; i < object->_sizeSprite.Y; i++)
+	CHAR_INFO** const dataSprite = object.GetObjectSprite();
+	for(int i = 0; i < object._sizeSprite.Y; i++)
 	{
-		for(int j = 0; j< object->_sizeSprite.X; j++)
+		for(int j = 0; j< object._sizeSprite.X; j++)
 		{
 			COORD biDCoord = {i,j};
 			biDCoord.X += spriteCoord.X;
