@@ -27,10 +27,7 @@
     <ClCompile Include="Objects\Object.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="InputManager.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="EventManager.cpp">
+    <ClCompile Include="CustomTools\CustomTool.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
@@ -47,6 +44,10 @@
     <ClInclude Include="Includes\ConsoleBuffer.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="Includes\Object.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\CustomTool.h">
     <ClInclude Include="Includes\EventType.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>

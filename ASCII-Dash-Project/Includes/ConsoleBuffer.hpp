@@ -18,5 +18,5 @@ private:
 	COORD _bufferSize;
 	COORD _bufferCoord;
 	SMALL_RECT _writingRegion;
-	CHAR_INFO _bufferInfo[GAME_WIDTH * GAME_HEIGHT] = {};
+	CHAR_INFO _bufferInfo[GAME_WIDTH][GAME_HEIGHT] = {};
 };

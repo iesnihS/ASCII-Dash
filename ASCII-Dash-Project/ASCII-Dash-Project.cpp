@@ -15,6 +15,9 @@ int main()
     EventManager event(player);
     InputManager input(event);
     NYTimer timer;
+    Object obj;
+
+    buffer.DrawSprite({ 0,0 }, &obj);
 
     while (true) {
         input.PollEvent();

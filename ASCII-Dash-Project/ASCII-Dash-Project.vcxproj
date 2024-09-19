@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -71,16 +71,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Includes;CustomTools</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Includes;CustomTools;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Includes;CustomTools</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Includes;CustomTools;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Includes;CustomTools</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Includes;CustomTools;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Includes;CustomTools</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Includes;CustomTools;</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -140,17 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ASCII-Dash-Project.cpp" />
-    <ClCompile Include="EventManager.cpp" />
+    <ClCompile Include="CustomTools\CustomTool.cpp" />
     <ClCompile Include="Graphic_Pipeline\ConsoleBuffer.cpp" />
-    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Manager\ConsoleManager.cpp" />
     <ClCompile Include="NYTimer.cpp" />
     <ClCompile Include="Objects\Object.cpp" />
-    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Includes\EventManager.hpp" />
-    <ClInclude Include="Includes\EventType.hpp" />
+    <ClInclude Include="Includes\CustomTool.h" />
     <ClInclude Include="Includes\ConsoleBuffer.hpp" />
     <ClInclude Include="Includes\ConsoleManager.hpp" />
     <ClInclude Include="Includes\Object.hpp" />
