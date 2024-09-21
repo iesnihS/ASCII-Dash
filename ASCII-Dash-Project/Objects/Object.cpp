@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-#include "Object.h"
 #include "CustomTool.h"
 #include <iostream>
-=======
 #include "Object.hpp"
 
->>>>>>> f522dfaf685e4345355315c0c97cdba720d9f12a
 Object::Object()
 {
 	Init();
