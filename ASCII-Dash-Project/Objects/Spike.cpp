@@ -1,5 +1,6 @@
 #include "Spike.h"
-#include "iostream"
+
+//Init bloc object with define parameters
 Spike::Spike(COORD levelPosition) : 
 	Object(levelPosition, 
 		"\1\1\1\1\1\1\1\1\1Y7&\1\1\1\1\1\1\1\1"

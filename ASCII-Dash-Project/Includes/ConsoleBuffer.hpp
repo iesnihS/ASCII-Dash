@@ -15,6 +15,7 @@ public:
 	void DrawSpriteAtCoord(COORD,Object&);
 	void DrawSprite(Object&);
 	void DrawLevelAtIndex(Level, int);
+	void ClearConsoleBuffer();
 private:
 	void InitBuffer();
 	HANDLE _consoleOutput;
