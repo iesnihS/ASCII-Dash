@@ -141,18 +141,22 @@
   <ItemGroup>
     <ClCompile Include="ASCII-Dash-Project.cpp" />
     <ClCompile Include="CustomTools\CustomTool.cpp" />
+    <ClCompile Include="EntityMap.cpp" />
     <ClCompile Include="Graphic_Pipeline\ConsoleBuffer.cpp" />
+    <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="Manager\ConsoleManager.cpp" />
     <ClCompile Include="NYTimer.cpp" />
     <ClCompile Include="Objects\Object.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EntityMap.hpp" />
     <ClInclude Include="Includes\CustomTool.h" />
     <ClInclude Include="Includes\ConsoleBuffer.hpp" />
     <ClInclude Include="Includes\ConsoleManager.hpp" />
     <ClInclude Include="Includes\Object.hpp" />
     <ClInclude Include="Includes\InputManager.hpp" />
     <ClInclude Include="Includes\Player.hpp" />
+    <ClInclude Include="LevelManager.hpp" />
     <ClInclude Include="NYTimer.hpp" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
