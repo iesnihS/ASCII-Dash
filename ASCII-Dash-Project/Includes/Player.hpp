@@ -5,6 +5,7 @@
 class Player : public Object
 {
 public:
+	Player();
 	void Jump();
 	void Update();
 private:
