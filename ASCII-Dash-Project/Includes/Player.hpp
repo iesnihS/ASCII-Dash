@@ -5,8 +5,11 @@
 class Player : public Object
 {
 public:
-	void Jump() const;
+	void Jump();
+	void Update();
 private:
-	COORD position;
+	COORD _position;
+	COORD _velocity;
+	bool _isGrounded;
 };
 

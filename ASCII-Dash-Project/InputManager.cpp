@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-InputManager::InputManager(const EventManager &eventManager) : _eventManager(eventManager)
+InputManager::InputManager(const LevelManager &levelManager) : _levelManager(levelManager)
 {
 	_handle = GetStdHandle(STD_INPUT_HANDLE);
 	if (_handle == INVALID_HANDLE_VALUE)
@@ -50,11 +50,11 @@ void InputManager::PollEvent()
 		{
 		case KEY_EVENT: // keyboard input
 			if (event.Event.KeyEvent.bKeyDown && event.Event.KeyEvent.wVirtualKeyCode == VK_SPACE)
-				_eventManager.handleJump();
+				_levelManager.handleJump();
 			break;
 		case MOUSE_EVENT: // mouse input
 			if (event.Event.MouseEvent.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
-				_eventManager.handleJump();
+				_levelManager.handleJump();
 
 			break;
 

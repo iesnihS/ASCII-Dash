@@ -3,21 +3,26 @@
 #include "Player.hpp"
 
 enum EntityType {
-	Spike,
-	Block,
+	SpikeEntity,
+	BlockEntity,
 	Empty
 } typedef ENTITY_TYPE;
 
 class LevelManager
 {
 
-	LevelManager(COORD size);
+	LevelManager(COORD size, Player &player, EntityType *spriteArray);
 
-	void update();
+	void Update();
+	void handleJump();
+	void Win();
+	void Lose();
 
-	const Player& player;
-	ENTITY_TYPE **entityMap;
-	char **mapBuffer;
-	COORD size;
+	Player& _player;
+	ENTITY_TYPE** _entityMap;
+	char **_mapBuffer;
+	EntityType* _spriteArray;
+	COORD _size;
+	int _progress;
 };
 

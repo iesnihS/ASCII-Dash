@@ -1,11 +1,11 @@
 #pragma once
 #include <Windows.h>
 #include "EventType.hpp"
-#include "EventManager.hpp"
+#include "LevelManager.hpp"
 
 class InputManager {
 public:
-	InputManager(const EventManager &eventManager);
+	InputManager(const LevelManager &eventManager);
 	~InputManager();
 
 	void PollEvent();
@@ -14,6 +14,6 @@ private:
 	HANDLE _handle;
 	DWORD _oldInputMode;
 	INPUT_RECORD _record[128];
-	const EventManager& _eventManager;
+	const LevelManager& _levelManager;
 };
 

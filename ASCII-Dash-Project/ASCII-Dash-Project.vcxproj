@@ -143,11 +143,13 @@
     <ClCompile Include="CustomTools\CustomTool.cpp" />
     <ClCompile Include="EntityMap.cpp" />
     <ClCompile Include="Graphic_Pipeline\ConsoleBuffer.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="Manager\ConsoleManager.cpp" />
     <ClCompile Include="NYTimer.cpp" />
     <ClCompile Include="Objects\Object.cpp" />
     <ClCompile Include="Objects\Spike.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EntityMap.hpp" />
