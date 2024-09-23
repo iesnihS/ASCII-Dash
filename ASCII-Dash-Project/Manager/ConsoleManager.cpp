@@ -12,8 +12,8 @@ void ConsoleManager::FormatConsole()
 {
     int n_index = GWL_STYLE;
     LONG_PTR currentStyles = WS_OVERLAPPEDWINDOW | WS_HSCROLL | WS_VSCROLL;
-    HWND consoleWindow = GetConsoleWindow();
-    SetWindowLongPtr(consoleWindow, n_index, currentStyles);
-    SetWindowPos(consoleWindow, 0, 0, 0, 0, 0, SWP_NOZORDER | SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE | SWP_DRAWFRAME);
-    ShowWindow(consoleWindow, SW_SHOW);
+    _windowHandle = GetConsoleWindow();
+    SetWindowLongPtr(_windowHandle, n_index, currentStyles);
+    SetWindowPos(_windowHandle, 0, 0, 0, 0, 0, SWP_NOZORDER | SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE | SWP_DRAWFRAME);
+    ShowWindow(_windowHandle, SW_SHOW);
 }

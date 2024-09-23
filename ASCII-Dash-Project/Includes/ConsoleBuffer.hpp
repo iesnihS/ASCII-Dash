@@ -2,8 +2,9 @@
 #include <Windows.h>
 #include <vector>
 #include "Object.hpp"
-#define GAME_WIDTH 50
-#define GAME_HEIGHT 50
+#include "Level.h"
+#define GAME_WIDTH 300
+#define GAME_HEIGHT 300
 
 class ConsoleBuffer
 {
@@ -11,7 +12,9 @@ public:
 	ConsoleBuffer();
 	void Blit();
 	void DrawChar(COORD, CHAR_INFO);
-	void DrawSprite(COORD,Object&);
+	void DrawSpriteAtCoord(COORD,Object&);
+	void DrawSprite(Object&);
+	void DrawLevelAtIndex(Level, int);
 private:
 	void InitBuffer();
 	HANDLE _consoleOutput;

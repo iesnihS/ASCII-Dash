@@ -140,6 +140,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ASCII-Dash-Project.cpp" />
+    <ClCompile Include="Manager\LevelManager.cpp" />
+    <ClCompile Include="Objects\Level.cpp" />
+    <ClCompile Include="Objects\Bloc.cpp" />
     <ClCompile Include="CustomTools\CustomTool.cpp" />
     <ClCompile Include="Graphic_Pipeline\ConsoleBuffer.cpp" />
     <ClCompile Include="Manager\ConsoleManager.cpp" />
@@ -148,6 +151,7 @@
     <ClCompile Include="Objects\Spike.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Includes\Bloc.h" />
     <ClInclude Include="Includes\CustomTool.h" />
     <ClInclude Include="Includes\ConsoleBuffer.hpp" />
     <ClInclude Include="Includes\ConsoleManager.hpp" />
@@ -156,6 +160,8 @@
     <ClInclude Include="Includes\Object.hpp" />
     <ClInclude Include="Includes\InputManager.hpp" />
     <ClInclude Include="Includes\Player.hpp" />
+    <ClInclude Include="Includes\Level.h" />
+    <ClInclude Include="Includes\LevelManager.h" />
     <ClInclude Include="NYTimer.hpp" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
