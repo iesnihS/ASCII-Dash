@@ -1,81 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Fichiers sources">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Fichiers de ressources">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="ASCII-Dash-Project.cpp" />
+    <ClCompile Include="CustomTools\CustomTool.cpp" />
+    <ClCompile Include="Graphic_Pipeline\ConsoleBuffer.cpp" />
+    <ClCompile Include="Manager\ConsoleManager.cpp" />
+    <ClCompile Include="NYTimer.cpp" />
+    <ClCompile Include="Objects\Object.cpp" />
+    <ClCompile Include="Objects\Spike.cpp" />
+    <ClCompile Include="Objects\Bloc.cpp" />
+    <ClCompile Include="Objects\Level.cpp" />
+    <ClCompile Include="Manager\LevelManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ASCII-Dash-Project.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Manager\ConsoleManager.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphic_Pipeline\ConsoleBuffer.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Objects\Object.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CustomTools\CustomTool.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="NYTimer.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
+    <ClInclude Include="Includes\CustomTool.h" />
+    <ClInclude Include="Includes\ConsoleBuffer.hpp" />
+    <ClInclude Include="Includes\ConsoleManager.hpp" />
+    <ClInclude Include="Includes\Object.h" />
+    <ClInclude Include="Includes\Spike.h" />
+    <ClInclude Include="Includes\Object.hpp" />
+    <ClInclude Include="Includes\InputManager.hpp" />
+    <ClInclude Include="Includes\Player.hpp" />
+    <ClInclude Include="NYTimer.hpp" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Includes\Bloc.h" />
+    <ClInclude Include="Includes\Level.h" />
+    <ClInclude Include="Includes\LevelManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Includes\ConsoleManager.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Includes\ConsoleBuffer.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Includes\Object.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Includes\CustomTool.h">
-    <ClInclude Include="Includes\EventType.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Includes\InputManager.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Includes\EventManager.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Includes\Player.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Includes\Object.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="NYTimer.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
+    <ResourceCompile Include="ASCII-Dash-Project.rc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="ASCII-Dash-Project.rc">
-      <Filter>Fichiers de ressources</Filter>
-    </ResourceCompile>
   </ItemGroup>
 </Project>

@@ -2,8 +2,19 @@
 #include <iostream>
 #include "Object.hpp"
 
+Object::Object(COORD levelPosition, std::string asciiArt = "", COORD sizeSprite = {0,0}) 
+	: _ASCIIArt(asciiArt),
+	_sizeSprite(sizeSprite)
+{
+	_levelPosition = levelPosition;
+	Init();
+}
+
 Object::Object()
 {
+	_ASCIIArt = "";
+	_sizeSprite = { 0,0 };
+	_levelPosition = { 0,0 };
 	Init();
 }
 
