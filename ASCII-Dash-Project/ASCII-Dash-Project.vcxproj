@@ -147,12 +147,15 @@
     <ClCompile Include="Manager\ConsoleManager.cpp" />
     <ClCompile Include="NYTimer.cpp" />
     <ClCompile Include="Objects\Object.cpp" />
+    <ClCompile Include="Objects\Spike.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EntityMap.hpp" />
     <ClInclude Include="Includes\CustomTool.h" />
     <ClInclude Include="Includes\ConsoleBuffer.hpp" />
     <ClInclude Include="Includes\ConsoleManager.hpp" />
+    <ClInclude Include="Includes\Object.h" />
+    <ClInclude Include="Includes\Spike.h" />
     <ClInclude Include="Includes\Object.hpp" />
     <ClInclude Include="Includes\InputManager.hpp" />
     <ClInclude Include="Includes\Player.hpp" />

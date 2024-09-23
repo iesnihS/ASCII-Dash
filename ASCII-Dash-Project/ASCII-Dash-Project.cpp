@@ -2,27 +2,30 @@
 #include "ConsoleManager.hpp"
 #include "ConsoleBuffer.hpp"
 #include <iostream>
+#include <Spike.h>
 #include "Object.hpp"
 #include "InputManager.hpp"
 #include "EventManager.hpp"
 #include "NYTimer.hpp"
 
-int main()
+void SamuelMain()
 {
     ConsoleManager console;
     ConsoleBuffer buffer;
-    Player player;
-    EventManager event(player);
-    InputManager input(event);
-    NYTimer timer;
-    Object obj;
+    Spike obj;
+    buffer.DrawSprite({ 0,0 }, obj);
+    buffer.Blit();
+    Sleep(10000);
+}
 
-    buffer.DrawSprite({ 0,0 }, &obj);
+void EduardMain()
+{
 
-    while (true) {
-        input.PollEvent();
-        buffer.Blit();
-    }
+}
 
+int main()
+{
+    SamuelMain();
+   // EduardMain();
     return 0;
 }
