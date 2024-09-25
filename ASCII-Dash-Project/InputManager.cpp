@@ -49,12 +49,12 @@ void InputManager::PollEvent()
 		switch (event.EventType)
 		{
 		case KEY_EVENT: // keyboard input
-			if (event.Event.KeyEvent.bKeyDown && event.Event.KeyEvent.wVirtualKeyCode == VK_SPACE)
-				_levelManager.handleJump();
+			/*if (event.Event.KeyEvent.bKeyDown && event.Event.KeyEvent.wVirtualKeyCode == VK_SPACE)
+				_levelManager.handleJump();*/
 			break;
 		case MOUSE_EVENT: // mouse input
-			if (event.Event.MouseEvent.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
-				_levelManager.handleJump();
+			/*if (event.Event.MouseEvent.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
+				_levelManager.handleJump();*/
 
 			break;
 

@@ -60,9 +60,9 @@ void ConsoleBuffer::DrawScreen(std::vector<std::vector<CHAR_INFO>> screen)
 	}
 }
 
+//This method is using Level coordinates
 void ConsoleBuffer::DrawSprite(Object &object)
 {
-	
 	DrawSpriteAtCoord(object._levelPosition, object);
 }
 
@@ -82,13 +82,13 @@ void ConsoleBuffer::Blit()
 		_bufferCoord, &_writingRegion);
 }
 
-void ConsoleBuffer::Clear()
+void ConsoleBuffer::ClearConsoleBuffer()
 {
-	for (int i = 0; i < GAME_HEIGHT; i++)
+	for(int i =0; i <GAME_HEIGHT; i++)
 	{
-		for (int j = 0; j < GAME_WIDTH; j++)
+		for(int j = 0; j< GAME_WIDTH; j++)
 		{
-			_bufferInfo[i][j] = {0};
+			_bufferInfo[i][j].Char.AsciiChar = '\1';
 		}
 	}
 }

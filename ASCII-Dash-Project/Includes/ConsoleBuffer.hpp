@@ -10,12 +10,12 @@ class ConsoleBuffer
 public:
 	ConsoleBuffer();
 	void Blit();
-	void Clear();
 	void DrawChar(COORD, CHAR_INFO);
 	void DrawSpriteAtCoord(COORD,Object&);
 	void DrawSprite(Object&);
 	void DrawScreen(std::vector<std::vector<CHAR_INFO>> screen);
 	//void DrawLevelAtIndex(Level, int);
+	void ClearConsoleBuffer();
 private:
 	void InitBuffer();
 	HANDLE _consoleOutput;
