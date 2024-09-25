@@ -5,6 +5,12 @@
 class Player : public Object
 {
 public:
+	Player() = default;
+	Player(const Player &) = default;
+	Player(Player &&) = default;
+
+
+
 	void Jump();
 	void Update();
 private:

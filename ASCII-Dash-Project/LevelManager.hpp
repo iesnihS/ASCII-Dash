@@ -1,28 +1,32 @@
 #pragma once
 
 #include "Player.hpp"
+#include "ConsoleBuffer.hpp"
 
 enum EntityType {
 	SpikeEntity,
 	BlockEntity,
-	Empty
+	NumberOfEntities
 } typedef ENTITY_TYPE;
 
 class LevelManager
 {
-
-	LevelManager(COORD size, Player &player, EntityType *spriteArray);
+public:
+	LevelManager(Player &player, ConsoleBuffer &console);
+	~LevelManager();
 
 	void Update();
 	void handleJump();
 	void Win();
 	void Lose();
 
+private:
 	Player& _player;
-	ENTITY_TYPE** _entityMap;
-	char **_mapBuffer;
-	EntityType* _spriteArray;
+	std::vector<std::vector<ENTITY_TYPE>> _entityMap;
+	std::vector<std::vector<CHAR_INFO>> _mapBuffer;
+	std::vector<Object> _spriteArray;
 	COORD _size;
-	int _progress;
+	int _progress = 0;
+	ConsoleBuffer& _console;
 };
 

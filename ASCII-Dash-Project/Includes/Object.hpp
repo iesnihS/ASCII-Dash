@@ -13,7 +13,7 @@ class Object
 		COORD _levelPosition = { 0,0 };
 	protected:
 		void Init();
-		CHAR_INFO** _objectSprite = nullptr;
+		CHAR_INFO** _objectSprite;
 		std::string _ASCIIArt = ""; //the ASCII ART need to respect the size of its object
 		void ConvertASCIIArtToSpriteData();
 };

@@ -11,6 +11,6 @@ Spike::Spike(COORD levelPosition) :
 		"\1\1&?P#####&####G!5\1\1"
 		"\1#7JGBBBBBBBBBBG5~Y\1"
 		"&!^!???????????7!~:Y", 
-		{20,0})
+		{20,20})
 {
 }

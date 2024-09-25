@@ -2,19 +2,20 @@
 #include <Windows.h>
 #include <vector>
 #include "Object.hpp"
-#include "Level.h"
-#define GAME_WIDTH 300
-#define GAME_HEIGHT 300
+#define GAME_WIDTH 1000
+#define GAME_HEIGHT 1000
 
 class ConsoleBuffer
 {
 public:
 	ConsoleBuffer();
 	void Blit();
+	void Clear();
 	void DrawChar(COORD, CHAR_INFO);
 	void DrawSpriteAtCoord(COORD,Object&);
 	void DrawSprite(Object&);
-	void DrawLevelAtIndex(Level, int);
+	void DrawScreen(std::vector<std::vector<CHAR_INFO>> screen);
+	//void DrawLevelAtIndex(Level, int);
 private:
 	void InitBuffer();
 	HANDLE _consoleOutput;

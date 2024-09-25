@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ASCII-Dash-Project.cpp" />
+    <ClCompile Include="Objects\Bloc.cpp" />
     <ClCompile Include="CustomTools\CustomTool.cpp" />
     <ClCompile Include="EntityMap.cpp" />
     <ClCompile Include="Graphic_Pipeline\ConsoleBuffer.cpp" />

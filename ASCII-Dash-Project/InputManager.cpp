@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-InputManager::InputManager(const LevelManager &levelManager) : _levelManager(levelManager)
+InputManager::InputManager(LevelManager &levelManager) : _levelManager(levelManager)
 {
 	_handle = GetStdHandle(STD_INPUT_HANDLE);
 	if (_handle == INVALID_HANDLE_VALUE)
@@ -43,7 +43,7 @@ void InputManager::PollEvent()
 
 	// Dispatch the events to the appropriate handler.
 
-	for (int i = 0; i < numread; i++)
+	for (unsigned int i = 0; i < numread; i++)
 	{
 		INPUT_RECORD event = _record[i];
 		switch (event.EventType)

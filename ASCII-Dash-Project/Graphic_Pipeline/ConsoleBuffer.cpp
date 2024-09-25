@@ -6,6 +6,10 @@
 ConsoleBuffer::ConsoleBuffer()
 {
 	InitBuffer();
+	CONSOLE_FONT_INFOEX cfi = { sizeof(cfi) };
+	GetCurrentConsoleFontEx(_consoleOutput, FALSE, &cfi);
+	cfi.dwFontSize.Y = 6;                  // Height
+	SetCurrentConsoleFontEx(_consoleOutput, FALSE, &cfi);
 }
 
 void ConsoleBuffer::InitBuffer()
@@ -31,7 +35,7 @@ void ConsoleBuffer::DrawChar(COORD charCoord, CHAR_INFO charInfo)
 //This method is using Console coordinates
 void ConsoleBuffer::DrawSpriteAtCoord(COORD spriteCoord, Object &object)
 {
-	CHAR_INFO** const dataSprite = object.GetObjectSprite();
+	CHAR_INFO** dataSprite = object.GetObjectSprite();
 	for(int i = 0; i < object._sizeSprite.Y; i++)
 	{
 		for(int j = 0; j< object._sizeSprite.X; j++)
@@ -44,12 +48,25 @@ void ConsoleBuffer::DrawSpriteAtCoord(COORD spriteCoord, Object &object)
 	}
 }
 
+void ConsoleBuffer::DrawScreen(std::vector<std::vector<CHAR_INFO>> screen)
+{
+	for (int i = 0; i < screen.size(); i++)
+	{
+		for (int j = 0; j < screen[0].size(); j++)
+		{
+			COORD biDCoord = { j,i };
+			DrawChar({ biDCoord.X , biDCoord.Y }, screen[i][j]);
+		}
+	}
+}
+
 void ConsoleBuffer::DrawSprite(Object &object)
 {
 	
 	DrawSpriteAtCoord(object._levelPosition, object);
 }
 
+/*
 void ConsoleBuffer::DrawLevelAtIndex(Level level, int index)
 {
 	Object* objects = level.GetObjectInConsoleCoord();
@@ -57,10 +74,21 @@ void ConsoleBuffer::DrawLevelAtIndex(Level level, int index)
 	{
 		DrawSprite(objects[i]);
 	}
-}
+}*/
 
 void ConsoleBuffer::Blit()
 {
 	WriteConsoleOutput(_consoleOutput,(CHAR_INFO*) _bufferInfo, _bufferSize,
 		_bufferCoord, &_writingRegion);
+}
+
+void ConsoleBuffer::Clear()
+{
+	for (int i = 0; i < GAME_HEIGHT; i++)
+	{
+		for (int j = 0; j < GAME_WIDTH; j++)
+		{
+			_bufferInfo[i][j] = {0};
+		}
+	}
 }

@@ -5,7 +5,7 @@
 
 class InputManager {
 public:
-	InputManager(const LevelManager &eventManager);
+	InputManager(LevelManager &eventManager);
 	~InputManager();
 
 	void PollEvent();
@@ -13,7 +13,7 @@ public:
 private:
 	HANDLE _handle;
 	DWORD _oldInputMode;
-	INPUT_RECORD _record[128];
-	const LevelManager& _levelManager;
+	INPUT_RECORD _record[128] = { 0 };
+	LevelManager& _levelManager;
 };
 

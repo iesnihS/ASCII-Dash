@@ -1,18 +1,21 @@
 #include "LevelManager.hpp"
+#include "Bloc.h"
+#include "Spike.h"
+#include <iostream>
 
-LevelManager::LevelManager(COORD size, Player & player, EntityType* spriteArray) : _player(player), _spriteArray(spriteArray)
+LevelManager::LevelManager(Player & player, ConsoleBuffer &console)
+	: _player(player), _spriteArray(), _console(console), _size({ 50, 50 }), _mapBuffer({ 50 * 20, std::vector<CHAR_INFO>{50 * 20} })
 {
-	_entityMap = nullptr;
-	_mapBuffer = nullptr;
+	_entityMap = {{SpikeEntity}};
+}
+
+LevelManager::~LevelManager()
+{
 }
 
 void LevelManager::Update()
 {
-	_progress += 1;
-	if (_progress >= _size.X) {
-		Win();
-	}
-	_player.Update();
+	_console.DrawScreen(_mapBuffer);
 }
 
 void LevelManager::Win() {
