@@ -72,3 +72,24 @@ void ConsoleBuffer::Blit()
 	WriteConsoleOutput(_consoleOutput,(CHAR_INFO*) _bufferInfo, _bufferSize,
 		_bufferCoord, &_writingRegion);
 }
+
+void ConsoleBuffer::PaintFrame()
+{
+	for (int i = 0; i < GAME_WIDTH; i++)
+	{
+		_bufferInfo[i][0].Char.AsciiChar = '@';
+		_bufferInfo[i][0].Attributes = 0x0003;
+
+		_bufferInfo[i][119].Char.AsciiChar = '@';
+		_bufferInfo[i][119].Attributes = 0x0003;
+	}
+
+	for (int i = 0; i < GAME_HEIGHT; i++)
+	{
+		_bufferInfo[0][i].Char.AsciiChar = '@';
+		_bufferInfo[0][i].Attributes = 0x0003;
+
+		_bufferInfo[29][i].Char.AsciiChar = '@';
+		_bufferInfo[29][i].Attributes = 0x0003;
+	}
+}

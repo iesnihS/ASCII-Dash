@@ -16,6 +16,7 @@ public:
 	void DrawSprite(COORD,Object&);
 	void DrawSprite(Object& object);
 	void ClearBuffer();
+	void PaintFrame();
 private:
 	GameManager& _gameManager;
 	void InitBuffer();

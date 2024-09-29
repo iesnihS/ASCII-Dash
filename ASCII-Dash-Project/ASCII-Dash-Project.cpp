@@ -36,13 +36,14 @@ void SamuelMain()
         buffer.ClearBuffer();
         player.DisplayPlayer(buffer);
         level.DisplaySprite(buffer);
+        buffer.PaintFrame();
         buffer.Blit();
     }
     buffer.ClearBuffer();
     buffer.Blit();
     std::cout << "GAME OVER" << std::endl;
     std::cout << "SCORE : " << score.getElapsedSeconds() << std::endl;
-    Sleep(200);
+    Sleep(1000);
 }
 
 int main()
