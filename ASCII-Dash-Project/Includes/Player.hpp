@@ -5,7 +5,7 @@
 class Player : public Object
 {
 public:
-	Player() = default;
+	Player();
 	Player(const Player &) = default;
 	Player(Player &&) = default;
 	void Jump();

@@ -28,8 +28,8 @@ void ConsoleBuffer::DrawChar(COORD charCoord, CHAR_INFO charInfo)
 	if (charInfo.Char.AsciiChar == '\1') {
 		return;
 	}
-	_bufferInfo[charCoord.Y][charCoord.X].Char.AsciiChar = charInfo.Char.AsciiChar;
-	_bufferInfo[charCoord.Y][charCoord.X].Attributes = charInfo.Attributes;
+	_bufferInfo[charCoord.X][charCoord.Y].Char.AsciiChar = charInfo.Char.AsciiChar;
+	_bufferInfo[charCoord.X][charCoord.Y].Attributes = charInfo.Attributes;
 }
 
 //This method is using Console coordinates
@@ -40,7 +40,7 @@ void ConsoleBuffer::DrawSpriteAtCoord(COORD spriteCoord, Object &object)
 	{
 		for(int j = 0; j< object._sizeSprite.X; j++)
 		{
-			COORD biDCoord = {j,i};
+			COORD biDCoord = {i,j};
 			biDCoord.X += spriteCoord.X;
 			biDCoord.Y += spriteCoord.Y;
 			DrawChar({ biDCoord.X , biDCoord.Y }, dataSprite[i][j]);
@@ -54,7 +54,7 @@ void ConsoleBuffer::DrawScreen(std::vector<std::vector<CHAR_INFO>> screen)
 	{
 		for (int j = 0; j < screen[0].size(); j++)
 		{
-			COORD biDCoord = { j,i };
+			COORD biDCoord = { i,j };
 			DrawChar({ biDCoord.X , biDCoord.Y }, screen[i][j]);
 		}
 	}

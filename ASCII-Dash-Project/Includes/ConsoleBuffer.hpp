@@ -2,8 +2,8 @@
 #include <Windows.h>
 #include <vector>
 #include "Object.hpp"
-#define GAME_WIDTH 1000
-#define GAME_HEIGHT 1000
+#define GAME_WIDTH 10
+#define GAME_HEIGHT 50
 
 class ConsoleBuffer
 {
@@ -22,5 +22,5 @@ private:
 	COORD _bufferSize;
 	COORD _bufferCoord;
 	SMALL_RECT _writingRegion;
-	CHAR_INFO _bufferInfo[GAME_WIDTH][GAME_HEIGHT] = {};
+	CHAR_INFO _bufferInfo[GAME_WIDTH * 20][GAME_HEIGHT * 20] = {};
 };

@@ -148,7 +148,6 @@
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="Manager\ConsoleManager.cpp" />
     <ClCompile Include="NYTimer.cpp" />
-    <ClCompile Include="Objects\Level.cpp" />
     <ClCompile Include="Objects\Object.cpp" />
     <ClCompile Include="Objects\Spike.cpp" />
     <ClCompile Include="Player.cpp" />

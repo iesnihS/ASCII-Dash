@@ -9,8 +9,10 @@
     <ClCompile Include="Objects\Object.cpp" />
     <ClCompile Include="Objects\Spike.cpp" />
     <ClCompile Include="Objects\Bloc.cpp" />
-    <ClCompile Include="Objects\Level.cpp" />
-    <ClCompile Include="Manager\LevelManager.cpp" />
+    <ClCompile Include="EntityMap.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="LevelManager.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Includes\CustomTool.h" />
@@ -23,9 +25,8 @@
     <ClInclude Include="Includes\Player.hpp" />
     <ClInclude Include="NYTimer.hpp" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Includes\Bloc.h" />
-    <ClInclude Include="Includes\Level.h" />
-    <ClInclude Include="Includes\LevelManager.h" />
+    <ClInclude Include="EntityMap.hpp" />
+    <ClInclude Include="LevelManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ASCII-Dash-Project.rc" />

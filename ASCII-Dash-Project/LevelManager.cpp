@@ -4,7 +4,7 @@
 #include <iostream>
 
 LevelManager::LevelManager(Player & player, ConsoleBuffer &console)
-	: _player(player), _spriteArray(), _console(console), _size({ 50, 50 }), _mapBuffer({ 50 * 20, std::vector<CHAR_INFO>{50 * 20} })
+	: _player(player), _spriteArray(), _console(console), _size({ 50, 50 }), _mapBuffer({ GAME_WIDTH * 20, std::vector<CHAR_INFO>{GAME_HEIGHT * 20} })
 {
 	_entityMap = {{SpikeEntity}};
 }
