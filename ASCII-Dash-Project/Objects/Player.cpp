@@ -3,7 +3,7 @@
 #include <math.h>
 #include "Level.h"
 
-Player::Player():Object({ 1,0 },
+Player::Player():Object({ 2,0 },
 	"5777!!77!5"
 	"5~? J!!J ? ~Y"
 	"57J ? ? ? ? J7Y"

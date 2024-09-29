@@ -9,8 +9,9 @@ Level::Level(std::deque<Object> allObject)
 }
 void Level::UpdateLevel(float deltaTime)
 {
-	_lastTimeDecaled += deltaTime;
-	_lastTimeSpawned += deltaTime;
+	_difficulty += LEVEL_DIFFICULTY_GROW;
+	_lastTimeDecaled += (deltaTime + _difficulty);
+	_lastTimeSpawned += (deltaTime + _difficulty);
 	if(_lastTimeDecaled >= LEVEL_SPEED)
 	{
 		_lastTimeDecaled = 0;

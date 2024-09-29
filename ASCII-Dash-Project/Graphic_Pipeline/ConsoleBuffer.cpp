@@ -63,6 +63,7 @@ void ConsoleBuffer::ClearBuffer()
 		for (int j = 0; j < GAME_WIDTH; j++)
 		{
 			_bufferInfo[i][j].Char.AsciiChar = '\0';
+			_bufferInfo[i][j].Attributes = 0x0000;
 		}
 	}
 }
