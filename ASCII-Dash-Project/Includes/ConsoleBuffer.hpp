@@ -10,14 +10,14 @@
 class ConsoleBuffer
 {
 public:
-	ConsoleBuffer(GameManager);
+	ConsoleBuffer(GameManager&);
 	void Blit();
 	void DrawChar(COORD, CHAR_INFO);
 	void DrawSprite(COORD,Object&);
 	void DrawSprite(Object& object);
 	void ClearBuffer();
 private:
-	GameManager _gameManager;
+	GameManager& _gameManager;
 	void InitBuffer();
 	HANDLE _consoleOutput;
 	COORD _bufferSize;

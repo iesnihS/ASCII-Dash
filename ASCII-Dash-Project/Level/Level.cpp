@@ -32,8 +32,9 @@ void Level::UpdateLevel(float deltaTime)
 		_lastTimeSpawned = 0;
 
 		int randomIndex = std::rand() % 2;
-		Spike spike({0,0});
-		spike.SetSpriteCoord({ MAXCOORD.X, (short) (randomIndex == 0 ? 0 : MAXCOORD.Y - spike._sizeSprite.Y)});
+
+		Spike spike({0,0}, randomIndex == 0);
+		spike.SetSpriteCoord({ MAXCOORD.X, (short) (randomIndex == 0 ? 1 : MAXCOORD.Y - spike._sizeSprite.Y - 1)});
 		_allObjects.push_back(spike);
 
 	}

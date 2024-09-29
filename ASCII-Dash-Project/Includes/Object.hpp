@@ -6,7 +6,7 @@ class Object
 {
 	public:
 		Object() = default;
-		Object(COORD, std::string, COORD, int);
+		Object(COORD, std::string, COORD, int, bool);
 		std::vector<std::vector<CHAR_INFO>> GetObjectSprite();
 		COORD _sizeSprite = {0,0};
 		COORD GetSpriteCoord();
@@ -18,5 +18,6 @@ class Object
 		void ConvertASCIIArtToSpriteData();
 		COORD _coordObject;
 		int _currentColor = 0x0001;
+		bool _reverseSprite;
 };
 

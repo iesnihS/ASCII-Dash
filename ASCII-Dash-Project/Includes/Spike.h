@@ -4,7 +4,7 @@
 class Spike : public Object
 {
 public:
-	Spike(COORD coord);
+	Spike(COORD coord, bool reverse);
 };
 
 

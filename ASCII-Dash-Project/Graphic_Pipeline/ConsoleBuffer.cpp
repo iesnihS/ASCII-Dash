@@ -3,7 +3,7 @@
 #include <math.h>
 #include <CustomTool.h>
 
-ConsoleBuffer::ConsoleBuffer(GameManager gm) : _gameManager(gm)
+ConsoleBuffer::ConsoleBuffer(GameManager &gm) : _gameManager(gm)
 {
 	InitBuffer();
 }
@@ -27,7 +27,6 @@ void ConsoleBuffer::DrawChar(COORD charCoord, CHAR_INFO charInfo)
 	if (_bufferInfo[charCoord.Y][charCoord.X].Attributes == 0x0002 && charInfo.Attributes == 0x0001)
 	{
 		_gameManager.SetStateGame(true);
-		//std::cout << "OMGGGGGGGGGGGGGGGGGGG" << std::endl;
 	}
 	_bufferInfo[charCoord.Y][charCoord.X].Char.AsciiChar = charInfo.Char.AsciiChar;
 	_bufferInfo[charCoord.Y][charCoord.X].Attributes = charInfo.Attributes;

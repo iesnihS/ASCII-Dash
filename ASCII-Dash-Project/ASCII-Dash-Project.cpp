@@ -16,6 +16,7 @@ void SamuelMain()
     ConsoleManager console;
     ConsoleBuffer buffer(gm);
     NYTimer nytimer;
+    NYTimer score;
 
     Level level(std::deque<Object>(0));
     
@@ -37,6 +38,11 @@ void SamuelMain()
         level.DisplaySprite(buffer);
         buffer.Blit();
     }
+    buffer.ClearBuffer();
+    buffer.Blit();
+    std::cout << "GAME OVER" << std::endl;
+    std::cout << "SCORE : " << score.getElapsedSeconds() << std::endl;
+    Sleep(200);
 }
 
 int main()
