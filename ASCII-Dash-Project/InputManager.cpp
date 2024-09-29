@@ -26,20 +26,20 @@ InputManager::~InputManager()
 	SetConsoleMode(_handle, _oldInputMode);
 }
 
-void InputManager::PollEvent()
+bool InputManager::PollEvent() //return if an event was register
 {
 	DWORD numread = 128;
 	DWORD numEvents = 0;
 
 	GetNumberOfConsoleInputEvents(_handle, &numEvents);
 	if (!numEvents)
-		return;
+		return false;
 	if (!ReadConsoleInput(
 		_handle,      // input buffer handle
 		_record,     // buffer to read into
 		128,         // size of read buffer
 		&numread)) // number of records read 
-		return;
+		return false;
 
 	// Dispatch the events to the appropriate handler.
 
@@ -50,16 +50,21 @@ void InputManager::PollEvent()
 		{
 		case KEY_EVENT: // keyboard input
 			if (event.Event.KeyEvent.bKeyDown && event.Event.KeyEvent.wVirtualKeyCode == VK_SPACE)
+			{
 				_eventManager.handleJump();
-			break;
+				return true;
+			}
+			return false;
+			
 		case MOUSE_EVENT: // mouse input
 			if (event.Event.MouseEvent.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
+			{
 				_eventManager.handleJump();
-
-			break;
-
+				return true;
+			}
+			return false;
 		default:
-			break;
+			return false;
 		}
 	}
 }

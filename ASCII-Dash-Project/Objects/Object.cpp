@@ -2,33 +2,30 @@
 #include <iostream>
 #include "Object.hpp"
 
-Object::Object()
+Object::Object(COORD coord = {0,0}, std::string ascii = "", COORD size={0,0}, int color = 0x0001) : _ASCIIArt(ascii), _sizeSprite(size) , _currentColor(color)
 {
+	_coordObject = coord;
 	Init();
 }
 
-Object::~Object()
-{
-	for (int i = 0; i < _sizeSprite.Y; i++)
-	{
-		delete _objectSprite[i];
-	}
-	delete _objectSprite;
-}
-
-CHAR_INFO** Object::GetObjectSprite()
+std::vector<std::vector<CHAR_INFO>> Object::GetObjectSprite()
 {
 	return _objectSprite;
+}
+
+COORD Object::GetSpriteCoord()
+{
+	return _coordObject;
 }
 
 void Object::Init()
 {
 	_sizeSprite.Y = floor(_ASCIIArt.size() / (double)_sizeSprite.X);
+	_objectSprite = std::vector<std::vector<CHAR_INFO>>(_sizeSprite.Y);
 
-	_objectSprite = new CHAR_INFO*[_sizeSprite.Y];
 	for (int i = 0; i < _sizeSprite.Y; i++)
 	{
-		_objectSprite[i] = new CHAR_INFO[_sizeSprite.X];
+		_objectSprite[i] = std::vector<CHAR_INFO>(_sizeSprite.X);
 		for (int j = 0; j < _sizeSprite.X; j++)
 		{
 			_objectSprite[i][j].Char.AsciiChar = '\1';
@@ -44,7 +41,13 @@ void Object::ConvertASCIIArtToSpriteData()
 		for (int j = 0; j < _sizeSprite.X; j++)
 		{
 			_objectSprite[i][j].Char.AsciiChar = _ASCIIArt[Convert2DArrayCoordTo1DArrayCoord(j,i, _sizeSprite.X)];
-			_objectSprite[i][j].Attributes = 0x0001;
+			_objectSprite[i][j].Attributes = _currentColor;
 		}
 	}
+}
+
+void Object::SetSpriteCoord(COORD newCoord)
+{
+	_coordObject.X = newCoord.X;
+	_coordObject.Y = newCoord.Y;
 }

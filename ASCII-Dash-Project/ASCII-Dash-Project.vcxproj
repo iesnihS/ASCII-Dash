@@ -141,22 +141,31 @@
   <ItemGroup>
     <ClCompile Include="ASCII-Dash-Project.cpp" />
     <ClCompile Include="CustomTools\CustomTool.cpp" />
+    <ClCompile Include="EventManager.cpp" />
+    <ClCompile Include="Manager\GameManager.cpp" />
     <ClCompile Include="Graphic_Pipeline\ConsoleBuffer.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="Level\Level.cpp" />
     <ClCompile Include="Manager\ConsoleManager.cpp" />
     <ClCompile Include="NYTimer.cpp" />
     <ClCompile Include="Objects\Object.cpp" />
     <ClCompile Include="Objects\Spike.cpp" />
+    <ClCompile Include="Objects\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Includes\GameManager.h" />
     <ClInclude Include="Includes\CustomTool.h" />
     <ClInclude Include="Includes\ConsoleBuffer.hpp" />
     <ClInclude Include="Includes\ConsoleManager.hpp" />
+    <ClInclude Include="Includes\EventManager.hpp" />
+    <ClInclude Include="Includes\EventType.hpp" />
     <ClInclude Include="Includes\Object.h" />
     <ClInclude Include="Includes\Spike.h" />
     <ClInclude Include="Includes\Object.hpp" />
     <ClInclude Include="Includes\InputManager.hpp" />
     <ClInclude Include="Includes\Player.hpp" />
-    <ClInclude Include="NYTimer.hpp" />
+    <ClInclude Include="Includes\Level.h" />
+    <ClInclude Include="Includes\NYTimer.hpp" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>

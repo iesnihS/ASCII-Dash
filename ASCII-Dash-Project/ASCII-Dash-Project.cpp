@@ -7,20 +7,36 @@
 #include "InputManager.hpp"
 #include "EventManager.hpp"
 #include "NYTimer.hpp"
+#include "Level.h"
 
 void SamuelMain()
 {
+    GameManager gm;
+    std::srand(std::time(nullptr));
     ConsoleManager console;
-    ConsoleBuffer buffer;
-    Spike obj;
-    buffer.DrawSprite({ 0,0 }, obj);
-    buffer.Blit();
-    Sleep(10000);
-}
+    ConsoleBuffer buffer(gm);
+    NYTimer nytimer;
 
-void EduardMain()
-{
+    Level level(std::deque<Object>(0));
+    
+    Player player;
+    EventManager eventManager(player);
+    InputManager inputManager(eventManager);
+    float deltaTime = 0;
 
+    while (!gm._gameFinished)
+    {
+        inputManager.PollEvent();
+        deltaTime = nytimer.getElapsedSeconds(true);
+        player.MovePlayer(deltaTime);
+        level.UpdateLevel(deltaTime);
+
+
+        buffer.ClearBuffer();
+        player.DisplayPlayer(buffer);
+        level.DisplaySprite(buffer);
+        buffer.Blit();
+    }
 }
 
 int main()

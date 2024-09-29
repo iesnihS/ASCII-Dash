@@ -1,8 +1,6 @@
 #include "Spike.h"
 #include "iostream"
-Spike::Spike()
-{
-	_ASCIIArt =
+Spike::Spike(COORD coord) : Object(coord, 
 		"\1\1\1\1\1\1\1\1\1Y7&\1\1\1\1\1\1\1\1"
 		"\1\1\1\1\1\1\1\1Y5G7&\1\1\1\1\1\1\1"
 		"\1\1\1\1\1\1\1Y5@@B7#\1\1\1\1\1\1"
@@ -11,7 +9,7 @@ Spike::Spike()
 		"\1\1\1\1?P&&&&&&&&B!P\1\1\1"
 		"\1\1&?P#####&####G!5\1\1"
 		"\1#7JGBBBBBBBBBBG5~Y\1"
-		"&!^!???????????7!~:Y";
-	_sizeSprite = { 20,0 };
-	Init();
+	"	&!^!???????????7!~:Y" , 
+	{ 20,0 }, 0x0001)
+{
 }

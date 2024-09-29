@@ -8,7 +8,7 @@ public:
 	InputManager(const EventManager &eventManager);
 	~InputManager();
 
-	void PollEvent();
+	bool PollEvent();
 
 private:
 	HANDLE _handle;

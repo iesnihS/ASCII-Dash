@@ -3,7 +3,7 @@
 #include <math.h>
 #include <CustomTool.h>
 
-ConsoleBuffer::ConsoleBuffer()
+ConsoleBuffer::ConsoleBuffer(GameManager gm) : _gameManager(gm)
 {
 	InitBuffer();
 }
@@ -20,24 +20,50 @@ void ConsoleBuffer::InitBuffer()
 
 void ConsoleBuffer::DrawChar(COORD charCoord, CHAR_INFO charInfo)
 {
-	if (charInfo.Char.AsciiChar == '\1') {
+	if (charInfo.Char.AsciiChar == '\1' || charCoord.X >= GAME_WIDTH || charCoord.Y >= GAME_HEIGHT || charCoord.X < 0 || charCoord.Y < 0) {
 		return;
 	}
-	_bufferInfo[charCoord.X][charCoord.Y].Char.AsciiChar = charInfo.Char.AsciiChar;
-	_bufferInfo[charCoord.X][charCoord.Y].Attributes = charInfo.Attributes;
+
+	if (_bufferInfo[charCoord.Y][charCoord.X].Attributes == 0x0002 && charInfo.Attributes == 0x0001)
+	{
+		_gameManager.SetStateGame(true);
+		//std::cout << "OMGGGGGGGGGGGGGGGGGGG" << std::endl;
+	}
+	_bufferInfo[charCoord.Y][charCoord.X].Char.AsciiChar = charInfo.Char.AsciiChar;
+	_bufferInfo[charCoord.Y][charCoord.X].Attributes = charInfo.Attributes;
 }
 
 void ConsoleBuffer::DrawSprite(COORD spriteCoord, Object &object)
 {
-	CHAR_INFO** const dataSprite = object.GetObjectSprite();
+	std::vector<std::vector<CHAR_INFO>> const dataSprite = object.GetObjectSprite();
 	for(int i = 0; i < object._sizeSprite.Y; i++)
 	{
 		for(int j = 0; j< object._sizeSprite.X; j++)
 		{
-			COORD biDCoord = {i,j};
+			COORD biDCoord = {j,i};
 			biDCoord.X += spriteCoord.X;
 			biDCoord.Y += spriteCoord.Y;
 			DrawChar({ biDCoord.X , biDCoord.Y }, dataSprite[i][j]);
+		}
+	}
+
+	COORD objectCoord = object.GetSpriteCoord();
+	if (objectCoord.X == spriteCoord.X && objectCoord.Y == spriteCoord.Y)
+		return;
+	object.SetSpriteCoord(spriteCoord);
+}
+
+void ConsoleBuffer::DrawSprite(Object& object)
+{
+	DrawSprite(object.GetSpriteCoord(), object);
+}
+void ConsoleBuffer::ClearBuffer()
+{
+	for (int i = 0; i < GAME_HEIGHT; i++)
+	{
+		for (int j = 0; j < GAME_WIDTH; j++)
+		{
+			_bufferInfo[i][j].Char.AsciiChar = '\0';
 		}
 	}
 }
