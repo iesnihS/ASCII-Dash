@@ -9,7 +9,7 @@
 #include "NYTimer.hpp"
 #include "Level.h"
 
-void SamuelMain()
+int main()
 {
     GameManager gm;
     std::srand(std::time(nullptr));
@@ -19,7 +19,7 @@ void SamuelMain()
     NYTimer score;
 
     Level level(std::deque<Object>(0));
-    
+
     Player player;
     EventManager eventManager(player);
     InputManager inputManager(eventManager);
@@ -44,11 +44,5 @@ void SamuelMain()
     std::cout << "GAME OVER" << std::endl;
     std::cout << "SCORE : " << score.getElapsedSeconds() << std::endl;
     Sleep(1000);
-}
-
-int main()
-{
-    SamuelMain();
-   // EduardMain();
     return 0;
 }
